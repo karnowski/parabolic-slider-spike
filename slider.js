@@ -13,7 +13,7 @@ $(document).ready(function() {
 			'animate': false, //the animation messes up the illusion - LJK
 			'min': -1, 
 			'max': (circleDiameter+1),
-			'value' : (circleDiameter+1),
+			'value' : circleRadius+1,
 			// 'step': 20,
 			'orientation' : 'horizontal',
 
