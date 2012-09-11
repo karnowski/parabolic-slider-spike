@@ -26,9 +26,9 @@
 
 .slider-content, .ui-widget-content {
 	margin: 0 auto; /*center slider in its container*/
-	width: 100px;
-	height: 200px;
-	background: #fff url(slider-bg.png) no-repeat top left;
+	width: 200px;
+	height: 100px; /* LJK: needs to be the full diameter of the circle */;
+	background: #fff url(slider-bg-north.png) no-repeat top left;
 	border: none;
 }
 .ui-slider .ui-slider-handle {
