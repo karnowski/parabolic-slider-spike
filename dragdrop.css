@@ -1,0 +1,85 @@
+#parabola-image {
+	height: 800px;
+	width: 400px;
+	background-image: url(parabola.png);
+	position: relative;
+	margin-bottom: 100px;
+}
+
+#parabola-image .target {
+	position: absolute; 
+/*	background-image: url(bubble-open.png);
+	background-repeat: no-repeat;
+*/}
+
+#parabola-image .target:hover {
+	background-image: url(bubble-highlighted.png);
+	background-repeat: no-repeat;
+}
+
+#parabola-image .target.selected {
+	background-image: url(bubble-closed.png);
+	background-repeat: no-repeat;
+}
+
+
+#parabola-image .green {
+	height: 200px;
+	width: 400px;
+	top: 0;
+	left: 0;
+}
+
+#parabola-image .yellow, #parabola-image .orange, #parabola-image .red {
+	height: 200px;
+	width: 200px;
+}
+
+#parabola-image .yellow.left  { top: 200px; left: 0px; }
+#parabola-image .yellow.right { top: 200px; left: 200px; }
+#parabola-image .orange.left  { top: 400px; left: 0px; }
+#parabola-image .orange.right { top: 400px; left: 200px; }
+#parabola-image .red.left     { top: 600px; left: 0px; }
+#parabola-image .red.right    { top: 600px; left: 200px; }
+
+
+/* ........................................................................... */
+
+/*#parabola {
+	position: relative;
+}
+
+#parabola .target {
+	display: block;
+	float: left;
+	height: 200px;
+	width: 200px;
+	margin: 0px;
+}
+
+#parabola .target:hover {
+	background-color: #eee;
+}
+
+#parabola .green  { background-color: green; }
+#parabola .yellow { background-color: yellow; }
+#parabola .orange { background-color: orange; }
+#parabola .red    { background-color: red; }
+
+#parabola .green {
+	width: 400px;
+}
+
+#parabola .green, #parabola .left {
+	clear:both;
+}
+
+#parabola #marker {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: black;
+}*/

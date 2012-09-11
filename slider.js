@@ -1,38 +1,31 @@
 $(document).ready(function() {
 	/*Slider */
 	$('.slider-input').each(function() {
-		  var currVal = $(this).val();
-		  if(currVal < 0){
-			  currVal = 0;
-		  }
+		var currVal = $(this).val();
+		if(currVal < 0){
+			currVal = 0;
+		}
+
+		var circleRadius = 100;
+		var circleMax = circleRadius*2;
+
 		$(this).parent().children('.slider-content').slider({
-			'animate': true, 
+			'animate': false, //the animation messes up the illusion - LJK
 			'min': -1, 
-			'max': 201,
-			'value' : 201,
+			'max': (circleMax+1),
+			'value' : (circleMax+1),
+			// 'step': 20,
 			'orientation' : 'vertical',
-			'stop': function(e, ui){
-				//$(this).prev('.slider-input').val(ui.value); //Set actual input field val, done during slide instead
-				
-				//pop handle back to top if we went out of bounds at bottom
-				/* 
-				if ( ui.value == -1 ) {
-					ui.value = 201;
-					$(this).children('.ui-slider-handle').css('bottom','100%');
-				}
-				*/
-			},
+
 			'slide': function(e, ui){
 				var percentLeft;
 				var submitValue;
-				var Y = ui.value - 100; //Find center of Circle (We're using a max value and height of 200)
-				var R = 100; //Circle's radius
+				var Y = ui.value - circleRadius; //Find center of Circle (We're using a max value and height of 200)
+				var R = circleRadius; //Circle's radius
 				var skip = false;
 				
-				$(this).children('.ui-slider-handle').attr('href',' UI.val = ' + ui.value);
-				
 				//Show default/disabled/out of bounds state
-				if ( ui.value > 0 && ui.value < 201 ) { //if in the valid slide rang
+				if ( ui.value > 0 && ui.value < (circleMax+1) ) { //if in the valid slide rang
 					$(this).children('.ui-slider-handle').addClass('is-active');
 				}
 				else {
@@ -40,16 +33,16 @@ $(document).ready(function() {
 				}
 				
 				//Calculate slider's path on circle, put it there, by setting background-position
-				if ( ui.value >= 0 && ui.value <= 200 ) { //if in valid range, these are one inside the min and max
+				if ( ui.value >= 0 && ui.value <= circleMax ) { //if in valid range, these are one inside the min and max
 					var X = Math.sqrt((R*R) - (Y*Y)); //X^2 + Y^2 = R^2. Find X.
 					if ( X == 'NaN' ) {
 						percentLeft = 0;
 					}
 					else {
-						percentLeft = X;					
+						percentLeft = X;
 					}
 				}
-				else if ( ui.value == -1 || ui.value == 201 ) {
+				else if ( ui.value == -1 || ui.value == (circleMax+1) ) {
 					percentLeft = 0;
 					skip = true;
 				}
